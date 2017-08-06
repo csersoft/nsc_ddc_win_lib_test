@@ -1,0 +1,99 @@
+;=-------------------------------------------------------------------------=
+; Copyright (c) 2012-2015, Lenovo, All Rights Reserved
+; 
+;---------------------------------------------------------------------------
+;
+; WinI2CDDC driver Installer File
+;
+;=--------------------------------------------------------------------------=
+[Version]
+Signature="$WINDOWS NT$"
+DriverPackageType=KernelService
+Class = System
+ClassGuid = {4d36e97d-e325-11ce-bfc1-08002be10318}
+Provider="Lenovo"
+DriverVer=11/13/2012, 4.0.5.0
+CatalogFile.NTx86=ddcdrvNTx86.cat    
+CatalogFile.NTamd64=ddcdrvNTx64.cat    
+
+[SourceDisksNames]
+1 = %CURRENT_DIR%
+2 = %CURRENT_DIR%,,,\DLL
+
+[SourceDisksNames.x86]
+3 = %CURRENT_DIR%,,,\X86
+
+[SourceDisksNames.amd64]
+4 = %CURRENT_DIR%,,,\X64
+
+;[SourceDisksFiles]
+
+
+[SourceDisksFiles.x86]
+ddcdrv.sys     = 3
+DDCHelper.dll  = 2
+DDCHelperX.dll = 2
+
+[SourceDisksFiles.amd64]
+ddcdrv.sys     = 4
+DDCHelper.dll  = 2
+DDCHelperX.dll = 2
+
+[FileList32-1]
+ddcdrv.sys
+
+[FileList32-2]
+DDCHelper.dll
+DDCHelperX.dll
+
+[FileList64-1]
+ddcdrv.sys
+
+[FileList64-2]
+DDCHelper.dll
+DDCHelperX.dll
+
+[DestinationDirs]
+FileList32-1=12
+FileList32-2=11
+FileList64-1=12
+FileList64-2=16425
+
+[ddcdrvService]
+DisplayName    = %DEVICE_DESC%
+ServiceType    = %SERVICE_KERNEL_DRIVER%
+StartType      = %SERVICE_BOOT_START%
+ErrorControl   = %SERVICE_ERROR_CRITICAL%
+ServiceBinary  = %12%\ddcdrv.sys
+
+[DDCHelperXRegSVR_X86]
+11,,DDCHelperX.dll, 1
+
+[DDCHelperXRegSVR_X64]
+16425,,DDCHelperX.dll, 1
+
+
+[DefaultInstall.NTx86]
+Copyfiles=FileList32-1,FileList32-2
+RegisterDlls=DDCHelperXRegSVR_X86
+
+[DefaultInstall.NTx86.Services]
+AddService=%SERVICE_NAME%,,ddcdrvService
+
+[DefaultInstall.NTamd64]
+Copyfiles=FileList64-1,FileList64-2
+RegisterDlls=DDCHelperXRegSVR_X64
+
+[DefaultInstall.NTamd64.Services]
+AddService=%SERVICE_NAME%,,ddcdrvService
+
+;------------------------------------------------------------------------------
+;  String Definitions
+;------------------------------------------------------------------------------
+[Strings]
+DEVICE_DESC	       = "WinI2C-DDC"
+SERVICE_NAME	       = "WinI2C-DDC"
+CURRENT_DIR            = "In the current directory!"
+SERVICE_KERNEL_DRIVER  = 1
+SERVICE_BOOT_START     = 1
+SERVICE_ERROR_CRITICAL = 1

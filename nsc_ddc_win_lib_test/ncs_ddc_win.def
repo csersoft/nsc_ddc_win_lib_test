@@ -1,0 +1,33 @@
+LIBRARY ncs_ddc_win.dll
+
+EXPORTS
+
+    ??0Cncs_ddc_win@@QAE@XZ      @1
+    ??1Cncs_ddc_win@@QAE@XZ      @2
+    ??4Cncs_ddc_win@@QAEAAV0@ABV0@@Z      @3
+    ?CheckingEnumerationState@Cncs_ddc_win@@QAE_NXZ      @4
+    ?GetCurrentDisplay@Cncs_ddc_win@@QAE_NF@Z      @5
+    ?GetDisplayArray@Cncs_ddc_win@@QAE_NXZ      @6
+    ?GetDisplayIndex@Cncs_ddc_win@@QAEFPAFKK@Z      @7 
+    ?GetEnumerationStatus@Cncs_ddc_win@@QAE_NXZ      @8 
+    ?GetError@Cncs_ddc_win@@QAE?AW4eDDC_ERROR@@XZ      @9 
+    ?GetMonitorData@Cncs_ddc_win@@QAE_NF@Z     @10 
+    ?GetNumberOfDisplays@Cncs_ddc_win@@QAEFXZ     @11 
+    ?GetRGBGains@Cncs_ddc_win@@AAE_NF@Z     @12 
+    ?GetVCPFeature@Cncs_ddc_win@@QAE_NFFPAF0@Z     @13   
+    ?MeasureAndSettle@Cncs_ddc_win@@AAE_NPAUdYxy@@N@Z     @14 
+    ?OpenLogFile@Cncs_ddc_win@@AAEPAU_iobuf@@PA_W@Z     @15  
+    ?PreCalibrate@Cncs_ddc_win@@QAE_NPAVCGenericCalibrator@@FNNN@Z     @16
+    ?PreCalibrateCheck@Cncs_ddc_win@@AAE_NXZ     @17
+    ?RGBCalibrationMethod@Cncs_ddc_win@@AAE_NFNN@Z     @18 
+    ?ResetDisplayState@Cncs_ddc_win@@QAE_NXZ     @19 
+    ?SaveMonitorData@Cncs_ddc_win@@QAE_NF@Z     @20    
+    ?SetColorTemperature@Cncs_ddc_win@@QAE_NFNN@Z     @21  
+    ?SetLuminance@Cncs_ddc_win@@QAE_NFN@Z     @22 
+    ?SetRGBGains@Cncs_ddc_win@@AAE_NF@Z     @23 
+    ?SetSaturationContrast@Cncs_ddc_win@@QAE_NF@Z     @24 
+    ?SetVCPFeature@Cncs_ddc_win@@QAE_NFFF@Z     @25 
+    ?XYZ2RGB_NOSCALING@Cncs_ddc_win@@AAEXPAUdXYZ@@PAUdRGB@@@Z     @26 
+    ?ddc_CleanUp@Cncs_ddc_win@@QAE_NXZ     @27 
+    ?ddc_Init@Cncs_ddc_win@@QAE_NXZ     @28
+    ?dumpEnumerationData@Cncs_ddc_win@@AAEXXZ     @29
