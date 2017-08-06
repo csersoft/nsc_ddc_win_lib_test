@@ -1,8 +1,8 @@
 #pragma once
 
-#ifndef _INC_STDIO
-#include <stdio.h>
-#endif
+/************************************************************************/
+/* VERSION: 0.0.2                                                       */
+/************************************************************************/
 
 #ifndef _WINDOWS_
 #include <Windows.h>
@@ -17,7 +17,7 @@
 
 #define DLL_IMPORT_API __declspec(dllimport) 
 
-enum eDDC_ERROR;
+enum eDDC_ERROR : int;
 class CGenericCalibrator;
 struct dYxy;
 struct dXYZ;
@@ -100,7 +100,6 @@ public:
   {
     return this->dumpEnumerationData();
   }
-
 
 };
 
